@@ -1,8 +1,32 @@
-let n = 64;
 let container = document.querySelector(".container");
 
+CreateDivs();
+
+let boxes = document.querySelectorAll(".box");
+boxes.forEach(function(elem) {
+    elem.addEventListener("mouseenter", function() {
+        elem.style.backgroundColor = "blue";
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Creates n*n divs in a square
-function CreateDivs () {
+function CreateDivs (n=16) {
 
     // Create n columns
     for (let i = 0; i < n; i++) {
@@ -24,5 +48,3 @@ function CreateDivs () {
         container.appendChild(column);
     }
 }
-
-CreateDivs();
