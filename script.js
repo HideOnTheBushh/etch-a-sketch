@@ -5,7 +5,7 @@ CreateDivs();
 
 
 // Change the size of the grid
-change = document.querySelector("#change")
+const change = document.querySelector("#change")
 
 change.addEventListener("click", function() {
 
@@ -32,7 +32,16 @@ change.addEventListener("click", function() {
 })
 
 
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", function() {
 
+    // Changes boxes background color to white
+    let boxes = document.querySelectorAll(".box");
+
+    boxes.forEach(function(elem) {
+        elem.style.backgroundColor = "white";
+    })
+})
 
 
 
