@@ -44,13 +44,6 @@ clear.addEventListener("click", function() {
 })
 
 
-
-
-
-
-
-
-
 // Creates n*n divs in a square
 function CreateDivs (n=16) {
     container.innerHTML = "";
@@ -75,12 +68,17 @@ function CreateDivs (n=16) {
         container.appendChild(column);
     }
 
-    // Changes boxes background color when hover over them
+    // Changes randomly boxes background color when hover over them
     let boxes = document.querySelectorAll(".box");
 
     boxes.forEach(function(elem) {
         elem.addEventListener("mouseenter", function() {
-            elem.style.backgroundColor = "blue";
+
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            elem.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
         })
     })
 
